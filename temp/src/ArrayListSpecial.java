@@ -19,13 +19,16 @@ public class ArrayListSpecial {
 
     public void addItem(int item){
         if(currentIndex<length){
-            innerItems[++currentIndex] = item;
+            innerItems[currentIndex++] = item;
         } else if (currentIndex==length) {
-            length = length + length/2;
-            currentIndex = length;
+            length = length + length/2; // -> 3
+            System.out.println("new length: " + length);
+            System.out.println("new currentIndex: " + currentIndex);
             innerItems = moveItems(innerItems,length);
             innerItems[currentIndex++] = item;
         }
+        // 2 -> 2+ 2/2 = 3
+        // currentIndex 0,1,2
 
     }
 
